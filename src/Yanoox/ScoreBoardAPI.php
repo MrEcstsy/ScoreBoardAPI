@@ -115,7 +115,7 @@ class ScoreBoardAPI{
         if (!self::hasScore($player)){
             throw new \BadFunctionCallException("Cannot get the line : the player's scoreboard has not been found");
         }
-        if(self::isLineValid(($line)){
+        if(self::isLineValid(($line))){
             throw new \OutOfBoundsException("$line isn't between 1 and 15");
         }
 
@@ -133,7 +133,7 @@ class ScoreBoardAPI{
         if (!isset(self::$lineScore[strtolower($player->getName())[$line]]) or !self::hasScore($player)){
             throw new \BadFunctionCallException("Cannot edit the line : the player's scoreboard has not been found");
         }
-        if(self::isLineCorrect($line)){
+        if(self::isLineValid($line)){
             throw new \OutOfBoundsException("$line isn't between 1 and 15");
         }
 
